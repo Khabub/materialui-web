@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+//import Signup from "./components/Signup";
+import styled from "styled-components";
+import LoginSignupButtons from "./components/layout/LoginSignupButtons";
+import MainCards from "./components/layout/MainCards";
+import Navigation from "./components/layout/Navigation";
+import VideoMain from "./components/layout/VideoMain";
 
-function App() {
+const App = (): JSX.Element => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Navigation />
+      <VideoMain />
+      <LoginSignupButtons />
+      <MainCards />
+    </Container>
   );
-}
+};
 
 export default App;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
