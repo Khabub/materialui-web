@@ -6,7 +6,7 @@ import GoogleIcon from "@mui/icons-material/Google";
 const LoginSignupButtons = (): JSX.Element => {
   return (
     <Container>
-      <h1>Build Your Softwares Hassle Free And With Top Notch Quality</h1>
+      <h1>BUILD Your Softwares Hassle Free And With Top Notch Quality</h1>
       <div>
         <ButtonSC variant="outlined" endIcon={<LocalPostOfficeIconSC />}>
           SIGNUP

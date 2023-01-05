@@ -53,7 +53,7 @@ const Container = styled.div`
 
 const ButtonSC = styled(Button)`
   && {
-    font-size: clamp(0.5rem, 2vw, 1.7rem);
+    font-size: clamp(0.7rem, 2vw, 1.7rem);
     margin: 0 0.5rem;
 
     // MEDIA QUERY
