@@ -42,7 +42,7 @@ const Container = styled.div`
   //MEDIA QUERY
   @media (min-width: 900px) {
     h1 {
-      margin-top: 6rem;
+      margin-top: 15rem;
     }
 
     h1.h1-weak {

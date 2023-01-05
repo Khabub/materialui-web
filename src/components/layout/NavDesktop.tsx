@@ -3,8 +3,7 @@ import FitbitIcon from "@mui/icons-material/Fitbit";
 import { Button, Tab, Tabs } from "@mui/material";
 import { useState } from "react";
 
-interface Props {
-  children?: React.ReactNode;
+interface Props extends React.PropsWithChildren {  
   menuList: string[];
 }
 

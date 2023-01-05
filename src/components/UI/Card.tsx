@@ -1,27 +1,70 @@
 import styled from "styled-components";
+import { useMobileMenu } from "../hooks/useMobileMenu";
 
 interface Props {
   children?: React.ReactNode;
   name: string;
   text: string;
   image: string;
+  swap: boolean;
 }
 
-const Card = (props: Props): JSX.Element => {
+const CardPicture = (props: Props) => {
   return (
-    <Container>
+    <div className="picture">
+      <img src={props.image} alt="card pic" />
+    </div>
+  );
+};
+
+const CardText = (props: Props) => {
+  return (
+    <div className="description">
       <h1>{props.name}</h1>
       <p>{props.text}</p>
-      <div className="picture">
-        <img src={props.image} alt="card pic" />
-      </div>
+    </div>
+  );
+};
+
+const SwapTrue = (props: Props) => {
+  return (
+    <Container swap={props.swap}>
+      <CardPicture {...props} />
+      <CardText {...props} />
     </Container>
+  );
+};
+
+const SwapFalse = (props: Props) => {
+  return (
+    <Container swap={props.swap}>
+      <CardText {...props} />
+      <CardPicture {...props} />
+    </Container>
+  );
+};
+
+const Card = (props: Props): JSX.Element => {
+  const { menu: windowWith } = useMobileMenu();
+
+  return (
+    <>
+      {!windowWith ? (
+        props.swap ? (
+          <SwapTrue {...props} />
+        ) : (
+          <SwapFalse {...props} />
+        )
+      ) : (
+        <SwapFalse {...props} />
+      )}
+    </>
   );
 };
 
 export default Card;
 
-const Container = styled.div`
+const Container = styled.div<Pick<Props, "swap">>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,7 +83,7 @@ const Container = styled.div`
   }
 
   .picture {
-    width: 80vw;    
+    width: 80vw;
   }
 
   img {
@@ -51,10 +94,34 @@ const Container = styled.div`
   }
 
   // MEDIA QUERY
-
   @media (min-width: 1200px) {
+    flex-direction: row;
+    width: 80vw;
+    margin-top: 10rem;
+
+    h1 {
+      width: initial;
+      text-align: ${(props) => (props.swap ? "left" : "right")};
+    }
+
+    p {
+      width: initial;
+      text-align: ${(props) => (props.swap ? "left" : "right")};
+    }
+
     .picture {
-      width: 50vw;
+      width: 50%;
+      transform: translate(125px, 50px);
+    }
+
+    img {
+      width: 60%;
+    }
+
+    .description {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
     }
   }
 `;

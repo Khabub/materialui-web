@@ -1,20 +1,30 @@
 //import Signup from "./components/Signup";
+import React from "react";
+import { Suspense } from "react";
 import styled from "styled-components";
-import Footer from "./components/layout/Footer";
-import LoginSignupButtons from "./components/layout/LoginSignupButtons";
-import MainCards from "./components/layout/MainCards";
-import Navigation from "./components/layout/Navigation";
-import VideoMain from "./components/layout/VideoMain";
+import CacheImages from "./components/cache-images/ImageCache";
+import Loading from "./components/UI/Loading";
+
+const Navigation = React.lazy(() => import("./components/layout/Navigation"));
+const VideoMain = React.lazy(() => import("./components/layout/VideoMain"));
+const LoginSignupButtons = React.lazy(
+  () => import("./components/layout/LoginSignupButtons")
+);
+const MainCards = React.lazy(() => import("./components/layout/MainCards"));
+const Footer = React.lazy(() => import("./components/layout/Footer"));
 
 const App = (): JSX.Element => {
   return (
-    <Container>
-      <Navigation />
-      <VideoMain />
-      <LoginSignupButtons />
-      <MainCards />
-      <Footer />
-    </Container>
+    <Suspense fallback={<Loading />}>
+      <Container>
+        <CacheImages />
+        <Navigation />
+        <VideoMain />
+        <LoginSignupButtons />
+        <MainCards />
+        <Footer />
+      </Container>
+    </Suspense>
   );
 };
 
@@ -25,4 +35,5 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;

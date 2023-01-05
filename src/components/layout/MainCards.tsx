@@ -6,23 +6,27 @@ interface CardInterface {
   name: string;
   text: string;
   image: string;
+  swap: boolean;
 }
 
-const cardInterface: CardInterface[] = [
+export const cardInterface: CardInterface[] = [
   {
     name: "Get Things Done",
     text: "lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.",
     image: photo1,
+    swap: false,
   },
   {
     name: "Productivity is Brilliant",
     text: "lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.",
     image: photo1,
+    swap: true,
   },
   {
     name: "Fast Development",
     text: "lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.",
     image: photo2,
+    swap: false,
   },
 ];
 

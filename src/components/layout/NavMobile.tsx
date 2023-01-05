@@ -42,13 +42,12 @@ const NavMobile = ({ menuList }: Props): JSX.Element => {
         open={openHam}
         onClose={() => setOpenHam(false)}
         onOpen={() => setOpenHam(true)}
-        // drawe používý Paper, takže nastavit sx v PaperProps
+        // drawer používý Paper, takže nastavit sx v PaperProps
         PaperProps={{
-          sx: {
-            width: "40vw",
+          sx: {            
             display: "flex",
             alignItems: "center",
-            paddingTop: "1rem",
+            padding: "1rem",
           },
         }}
       >
