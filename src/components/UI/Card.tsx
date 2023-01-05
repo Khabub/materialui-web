@@ -40,13 +40,14 @@ const Container = styled.div`
   }
 
   .picture {
-    width: 80vw;
+    width: 80vw;    
   }
 
   img {
     width: 100%;
     height: auto;
     border-radius: 15px;
+    box-shadow: 5px 5px 15px 5px #a5a5a5;
   }
 
   // MEDIA QUERY
