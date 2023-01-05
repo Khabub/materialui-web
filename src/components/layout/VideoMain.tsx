@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import myVideo from "../../assets/myVideo.mp4";
 
-
 const VideoMain = () => {
   return (
-    <Container>   
+    <Container>
       <video loop muted autoPlay playsInline>
         <source src={myVideo} type="video/mp4" />
       </video>

@@ -3,11 +3,7 @@ import NavDesktop from "./NavDesktop";
 import NavMobile from "./NavMobile";
 import { useMobileMenu } from "../hooks/useMobileMenu";
 
-interface Props {
-  children?: React.ReactNode;
-}
-
-const Navigation = (props: Props): JSX.Element => {
+const Navigation = (): JSX.Element => {
   const { menu } = useMobileMenu();
 
   const menuList: string[] = ["Products", "Solutions", "Pricing", "Enterprise"];

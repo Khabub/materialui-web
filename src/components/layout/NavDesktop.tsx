@@ -8,26 +8,7 @@ interface Props {
   menuList: string[];
 }
 
-/* interface LinkTabProps {
-  label?: string;
-  href?: string;
-} */
-
-
-
-/* function LinkTab(linkProps: LinkTabProps) {
-  return (
-    <Tab
-      component="a"
-      onClick={(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-        event.preventDefault();
-      }}
-      {...linkProps}
-    />
-  );
-} */
-
-const NavDesktop = ({menuList}: Props): JSX.Element => {
+const NavDesktop = ({ menuList }: Props): JSX.Element => {
   const [value, setValue] = useState<number>(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -47,7 +28,9 @@ const NavDesktop = ({menuList}: Props): JSX.Element => {
         </TabsSC>
       </div>
       <div className="menu-buttons">
-        <Button variant="outlined" sx={{ marginRight: "2rem" }}>TALK TO US</Button>
+        <Button variant="outlined" sx={{ marginRight: "2rem" }}>
+          TALK TO US
+        </Button>
         <Button variant="contained" sx={{ marginRight: "2rem" }}>
           TRY FOR FREE
         </Button>

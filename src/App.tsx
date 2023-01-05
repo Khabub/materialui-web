@@ -1,5 +1,6 @@
 //import Signup from "./components/Signup";
 import styled from "styled-components";
+import Footer from "./components/layout/Footer";
 import LoginSignupButtons from "./components/layout/LoginSignupButtons";
 import MainCards from "./components/layout/MainCards";
 import Navigation from "./components/layout/Navigation";
@@ -12,6 +13,7 @@ const App = (): JSX.Element => {
       <VideoMain />
       <LoginSignupButtons />
       <MainCards />
+      <Footer />
     </Container>
   );
 };
@@ -22,4 +24,5 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 `;
